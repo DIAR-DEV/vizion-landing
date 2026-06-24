@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de privacidad — Vizion SICAF</title>
+  <meta name="description" content="Política de privacidad de la aplicación Vizion SICAF.">
+  <link rel="icon" href="../assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #6A246C;
+      --teal: #00838F;
+      --gray-700: #3D3D3D;
+      --gray-500: #6B6B6B;
+      --gray-100: #F5F5F7;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ──────────────────────────────── */
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    .header-logo {
+      width: 36px;
+      height: 36px;
+    }
+
+    .header-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--purple);
+      text-decoration: none;
+    }
+
+    .header-name span {
+      color: var(--teal);
+    }
+
+    .header-name:hover {
+      opacity: 0.85;
+    }
+
+    /* ── Contenido ───────────────────────────── */
+
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .content h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--purple);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .content .updated {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      margin-bottom: 2.5rem;
+    }
+
+    .content h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .content p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--gray-700);
+      margin-bottom: 1rem;
+    }
+
+    .content ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--gray-700);
+    }
+
+    .content ul li {
+      margin-bottom: 0.35rem;
+    }
+
+    .content a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid #E5E5E5;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    footer a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ───────────────────────────── */
+
+    @media (max-width: 640px) {
+      .header { padding: 1rem 1.25rem; }
+      .content { padding: 2rem 1.25rem 4rem; }
+      .content h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="../">
+      <img src="../assets/logo.png" alt="Vizion SICAF" class="header-logo">
+    </a>
+    <a href="../" class="header-name">Vizion <span>SICAF</span></a>
+  </header>
+
+  <main class="content">
+    <h1>Política de privacidad</h1>
+    <!-- Reemplazar con la fecha real de publicación -->
+    <p class="updated">Última actualización: 24/06/2026</p>
+
+    <p>Sicaf Soluciones ("nosotros", "nuestro") opera la aplicación móvil Vizion SICAF ("la App"). Esta política describe qué información recopilamos, cómo la usamos y qué derechos tienes como usuario.</p>
+
+    <h2>1. Información que recopilamos</h2>
+    <p>Para el funcionamiento de la App recopilamos y tratamos las siguientes categorías de información:</p>
+    <ul>
+      <li><strong>Datos de cuenta:</strong> nombre y dirección de correo electrónico proporcionados durante el proceso de registro.</li>
+      <li><strong>Credenciales de autenticación:</strong> la gestión de contraseñas se realiza mediante AWS Cognito. No almacenamos ni tenemos acceso a las contraseñas en texto claro.</li>
+      <li><strong>Token de dispositivo:</strong> identificador generado por Firebase Cloud Messaging (FCM), utilizado para el envío de notificaciones push relacionadas con el estado y disponibilidad de los reportes generados.</li>
+      <li><strong>Datos empresariales:</strong> la App accede a información relacionada con ventas, inventario, proveedores y cartera directamente desde la base de datos de tu sistema Microsip. Dicha información no se almacena de forma permanente en nuestros servidores; únicamente se procesa de manera temporal y bajo demanda con el fin de generar reportes, los cuales posteriormente se entregan al dispositivo del usuario.</li>
+    </ul>
+
+    <h2>2. Cómo usamos tu información</h2>
+    <ul>
+      <li>Autenticar tu identidad e iniciar sesión de forma segura.</li>
+      <li>Generar los reportes que solicitas a partir de los datos de tu sistema Microsip.</li>
+      <li>Enviarte notificaciones push cuando un reporte esté listo para consultar.</li>
+      <li>Mantener y mejorar el funcionamiento de la App.</li>
+    </ul>
+    <p>No utilizamos tu información para fines publicitarios ni la compartimos con terceros para su comercialización.</p>
+
+    <h2>3. Servicios de terceros</h2>
+    <p>Para operar la App utilizamos los siguientes servicios:</p>
+    <ul>
+      <li><strong>Amazon Web Services (AWS):</strong> autenticación de usuarios (Cognito), almacenamiento temporal de solicitudes de reportes (DynamoDB), procesamiento en la nube (Lambda, SQS) y envío de notificaciones (SNS).</li>
+      <li><strong>Firebase Cloud Messaging (FCM):</strong> entrega de notificaciones push a tu dispositivo.</li>
+      <li><strong>Google Play Services:</strong> distribución de la App en dispositivos Android.</li>
+    </ul>
+    <p>Cada uno de estos servicios opera bajo sus propias políticas de privacidad. Te recomendamos revisarlas:</p>
+    <ul>
+      <li><a href="https://aws.amazon.com/privacy/" target="_blank" rel="noopener">Política de privacidad de AWS</a></li>
+      <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Política de privacidad de Firebase</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a></li>
+    </ul>
+
+    <h2>4. Almacenamiento y seguridad</h2>
+    <p>Tus credenciales se gestionan mediante AWS Cognito con cifrado en tránsito y en reposo. Los tokens de sesión se almacenan localmente en tu dispositivo de forma segura. Los datos de reportes se procesan bajo demanda y se transfieren mediante conexiones cifradas (HTTPS/TLS). No almacenamos datos de tu sistema Microsip de forma permanente en nuestros servidores.</p>
+
+    <h2>5. Conservación de datos</h2>
+    <p>Tu cuenta y los datos asociados se conservan mientras mantengas una cuenta activa en la App. Las solicitudes de reportes procesadas se conservan temporalmente para permitir su consulta y se eliminan de forma periódica. Puedes solicitar la eliminación de tu cuenta y datos asociados en cualquier momento contactándonos.</p>
+
+    <h2>6. Tus derechos</h2>
+    <p>Como usuario, tienes derecho a:</p>
+    <ul>
+      <li>Acceder a los datos personales que tenemos sobre ti.</li>
+      <li>Solicitar la corrección de datos inexactos.</li>
+      <li>Solicitar la eliminación de tu cuenta y datos personales.</li>
+      <li>Revocar tu consentimiento para el tratamiento de datos.</li>
+    </ul>
+    <p>Para ejercer cualquiera de estos derechos, contáctanos a través del correo indicado al final de esta política.</p>
+
+    <h2>7. Menores de edad</h2>
+    <p>La App no está dirigida a menores de 18 años. No recopilamos intencionalmente información de menores. Si detectamos que hemos recopilado datos de un menor, los eliminaremos de inmediato.</p>
+
+    <h2>8. Cambios a esta política</h2>
+    <p>Podemos actualizar esta política ocasionalmente. Publicaremos la versión actualizada en esta misma página con la fecha de la última modificación. Te recomendamos revisarla periódicamente.</p>
+
+    <h2>9. Contacto</h2>
+    <!-- Reemplazar con los datos de contacto reales -->
+    <p>Si tienes preguntas sobre esta política o sobre el manejo de tus datos, contáctanos en:</p>
+    <p>
+      Sicaf Soluciones<br>
+      Correo: <a href="mailto:soporte@sicaf-soluciones.mx">soporte@sicaf-soluciones.mx</a>
+    </p>
+  </main>
+
+  <footer>
+    <p><a href="../">← Volver al inicio</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vizion SICAF — Reportes Microsip en tu celular</title>
+  <meta name="description" content="Consulta los reportes de tu empresa Microsip desde tu celular. Ventas, inventario, proveedores y cartera en tiempo real.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #6A246C;
+      --purple-dark: #521E54;
+      --teal: #00838F;
+      --teal-dark: #006874;
+      --gray-700: #3D3D3D;
+      --gray-500: #6B6B6B;
+      --gray-300: #B0B0B0;
+      --gray-100: #F5F5F7;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--gray-700);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Hero ─────────────────────────────────── */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(106,36,108,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(0,131,143,0.06) 0%, transparent 50%),
+        var(--white);
+    }
+
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 12px rgba(106,36,108,0.15));
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--purple);
+      line-height: 1.1;
+    }
+
+    .hero-title span {
+      color: var(--teal);
+    }
+
+    .hero-tagline {
+      font-size: 1.15rem;
+      color: var(--gray-500);
+      margin-top: 0.75rem;
+      max-width: 440px;
+      line-height: 1.6;
+    }
+
+    /* ── Badges de descarga ────────────────────── */
+
+    .download-badges {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .badge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .badge-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .badge-link:active {
+      transform: translateY(0);
+    }
+
+    .badge-play {
+      background: var(--gray-700);
+      color: var(--white);
+    }
+
+    .badge-ios {
+      background: var(--gray-700);
+      color: var(--white);
+    }
+
+    .badge-icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* ── Características ──────────────────────── */
+
+    .features {
+      padding: 5rem 1.5rem;
+      background: var(--gray-100);
+    }
+
+    .features-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .features-heading {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--purple);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .feature-icon.ventas    { background: rgba(106,36,108,0.1); color: var(--purple); }
+    .feature-icon.inventario { background: rgba(0,131,143,0.1); color: var(--teal); }
+    .feature-icon.proveedores { background: rgba(106,36,108,0.1); color: var(--purple); }
+    .feature-icon.cartera    { background: rgba(0,131,143,0.1); color: var(--teal); }
+
+    .feature-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.55;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+
+    footer {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid #E5E5E5;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Responsive ───────────────────────────── */
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2rem; }
+      .hero-tagline { font-size: 1rem; }
+      .hero-logo { width: 96px; height: 96px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .features-heading { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <img src="assets/logo.png" alt="Vizion SICAF" class="hero-logo">
+    <h1 class="hero-title">Vizion <span>SICAF</span></h1>
+    <p class="hero-tagline">Consulta los reportes de tu empresa Microsip desde tu celular. Información en tiempo real, donde la necesites.</p>
+
+    <div class="download-badges">
+      <!-- Reemplazar href con los enlaces reales de cada tienda -->
+      <a href="#" class="badge-link badge-play" aria-label="Descargar en Google Play">
+        <svg class="badge-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.61 1.814L13.793 12 3.61 22.186a1.2 1.2 0 01-.41-.915V2.73c0-.346.149-.673.41-.915zM14.85 13.057l2.67 1.545-3.2 3.2-2.116-2.116 2.646-2.629zm2.67-2.659L14.85 11.943l-2.646-2.629 2.116-2.116 3.2 3.2zm1.54.89l2.11 1.22c.58.336.58 1.148 0 1.484l-2.11 1.22-1.675-1.677v-.57l1.675-1.677zM5.025.782l8.238 8.238-2.47 2.452L4.02.595a.814.814 0 011.005.187zM4.02 23.405l6.773-6.877 2.47 2.452-8.238 8.238a.814.814 0 01-1.005.187z"/>
+        </svg>
+        Google Play
+      </a>
+      <a href="#" class="badge-link badge-ios" aria-label="Descargar en App Store">
+        <svg class="badge-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        App Store
+      </a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features-inner">
+      <h2 class="features-heading">Tus reportes Microsip, siempre contigo</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon ventas">📊</div>
+          <h3 class="feature-name">Ventas</h3>
+          <p class="feature-desc">Tendencia mensual, KPIs, top de artículos y clientes, distribución por línea o grupo y desglose por sucursal.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon inventario">📦</div>
+          <h3 class="feature-name">Inventario</h3>
+          <p class="feature-desc">Existencias por sucursal o almacén con valorización del inventario y distribución por ubicación.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon proveedores">🤝</div>
+          <h3 class="feature-name">Proveedores</h3>
+          <p class="feature-desc">Saldos por pagar, deuda vencida, anticipos y distribución de antigüedad de adeudos.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon cartera">💰</div>
+          <h3 class="feature-name">Cartera</h3>
+          <p class="feature-desc">Saldos por cobrar de clientes, seguimiento de cuentas vencidas y estado general de la cobranza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      &copy; 2026 Sicaf Soluciones. Todos los derechos reservados.<br>
+      <a href="privacidad/">Política de privacidad</a>
+      <!-- Reemplazar con email de contacto real -->
+      &nbsp;·&nbsp; <a href="mailto:soporte@sicaf-soluciones.mx">Contacto</a>
+    </p>
+  </footer>
+
+</body>
+</html>
